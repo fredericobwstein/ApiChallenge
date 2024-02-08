@@ -17,9 +17,9 @@ namespace FulltechAPI.Core.Services
         public async Task<bool> IsWorkingDay(DateTime date)
         {
 
-            var dataAlternativa = 2023;
+            var yearDateApi= 2023;
             // Obter a lista de feriados do ano atual
-            var holidays = await GetHolidaysAsync(dataAlternativa);
+            var holidays = await GetHolidaysAsync(yearDateApi);
 
             // Verificar se a data da transferência não é um feriado
             foreach (var holiday in holidays)

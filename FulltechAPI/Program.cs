@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IAccountRepository, AccountRepository>();
+builder.Services.AddSingleton<ITransferRepository, TransferRepository>();
 builder.Services.AddScoped<HolidayCheckerService>();
 builder.Services.AddScoped<TransferService>();
 

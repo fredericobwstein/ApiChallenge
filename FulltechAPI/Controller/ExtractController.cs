@@ -18,9 +18,14 @@ namespace FulltechAPI.Controller
         }
 
         [HttpGet("statement")]
-        public List<Transfer> GetAccountStatement(DateTime startDate, DateTime endDate)
+        public  ActionResult<List<Transfer>> GetAccountStatement(DateTime startDate, DateTime endDate)
         {
             var transfers = _transferRepository.GetTransfersByPeriod(startDate, endDate);
+
+            if (transfers.Count == 0)
+            {
+                return NotFound("Nenhuma transferência encontrada neste período.");
+            }
 
             return transfers;
         }
