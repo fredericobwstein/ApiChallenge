@@ -18,7 +18,7 @@ namespace FulltechAPI.Controller
             _transferService = transferService;
         }
 
-        [HttpPut("transfer")]
+        [HttpPost("transfer")]
         public async Task<ActionResult> Transfer(int sourceAccountId, int targetAccountId, decimal amount, [FromServices] TransferService transferService)
         {
 
